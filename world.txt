@@ -1,0 +1,236 @@
+var firstbg = createSprite(200, 200,0.01);
+var loadline = createSprite(200, 250, 200, 1);
+var loadline2 = createSprite(200, 270, 200, 1);
+var loadline3 = createSprite(100, 260, 1, 20);
+var loadline4 = createSprite(300, 260, 1, 20);
+var secondbg = createSprite(200, 200, 0.01);
+var car = createSprite(0, 340, 0.01);
+var wheel = createSprite(-31, 352, 0.01);
+var wheel2 = createSprite(30, 352, 0.01);
+var tree = createSprite(200, 200, 0.01);
+var playbutton = createSprite(200, 200, 0.01);
+var box = createSprite(350, 80, 0.01);
+var settings = createSprite(350, 50, 0.01);
+var settings2 = createSprite(350, 50, 0.01);
+var soundOn = createSprite(350, 100, 0.01);
+var loadspeed = createSprite(100, 260, 1, 20);
+var thrirdbg = createSprite(200, 200, 0.01);
+var airplane = createSprite(300, 100, 0.01);
+var bicycle = createSprite(100, 300, 0.01);
+var boat = createSprite(300, 300, 0.01);
+var carr = createSprite(100, 100, 0.01);
+var fourthbg = createSprite(200, 200, 0.01);
+var fivethbg = createSprite(200, 200, 0.01);
+var sixthbg = createSprite(200, 200, 0.01);
+var seventhbg = createSprite(200, 200, 0.01);
+var boat1 = createSprite(100, 160, 0.01);
+var boat2 = createSprite(300, 160, 0.01);
+var boat3 = createSprite(100, 360, 0.01);
+var airplane1 = createSprite(100, 165, 0.01);
+var airplane2 = createSprite(300, 165, 0.01);
+var airplane3 = createSprite(100, 365, 0.01);
+var airplane4 = createSprite(300, 365, 0.01);
+var stage1bi = createSprite(200, 200, 0.01);
+var stage1bi2 = createSprite(600, 200, 0.01);
+var leftarow = createSprite(40, 200, 0.01);
+var rightarow = createSprite(360, 200, 0.01);
+var bicycle1 = createSprite(100, 167, 0.01);
+var bicycle2 = createSprite(300, 167, 0.01);
+var bicycle3 = createSprite(100, 367, 0.01);
+var car1 = createSprite(100, 170, 0.01);
+var car2 = createSprite(300, 170, 0.01);
+var loak1 = createSprite(300, 170, 0.01);
+var car3 = createSprite(100, 370, 0.01);
+var loak2 = createSprite(100, 370, 0.01);
+var car4 = createSprite(300, 370, 0.01);
+var loak3 = createSprite(300, 370, 0.01);
+var stage1 = createSprite(100, 100, 0.01);
+var stage2 = createSprite(300, 100, 0.01);
+var stage3 = createSprite(100, 300, 0.01);
+var stage4 = createSprite(300, 300, 0.01);
+var choose1 = createSprite(100, 100, 0.01);
+var choose2 = createSprite(300, 100, 0.01);
+var choose3 = createSprite(100, 300, 0.01);
+var choose4 = createSprite(300, 300, 0.01);
+var settings = createSprite(350, 50, 0.01);
+var settings2 = createSprite(350, 50, 0.01);
+loadline.shapeColor = "white";
+loadline2.shapeColor = "white";
+loadline3.shapeColor = "white";
+loadline4.shapeColor = "white";
+firstbg.setAnimation("desert_road_1");
+var mouse = createSprite(200, 200, 0.01);
+mouse.setAnimation("Screenshot (835).png_2");
+
+function draw() {
+  loadspeed.shapeColor = "white";
+  loadspeed.velocityX = 10;
+  mouse.y = World.mouseY;
+  mouse.x = World.mouseX;
+  
+  if (loadspeed.isTouching(loadline4)) {
+    loadline.destroy();
+    loadline2.destroy();
+    loadline3.destroy();
+    loadline4.destroy();
+    loadspeed.destroy();
+    firstbg.destroy();
+    secondbg.setAnimation("pine_trees_1");
+    wheel.rotationSpeed = 3;
+    wheel.velocityX = 3;
+    wheel2.setAnimation("monstertruck_01_2_copy_1");
+    wheel2.rotationSpeed = 3;
+    wheel2.velocityX = 3;
+    car.setAnimation("monstertruck_01_1");
+    car.velocityX = 3;
+    tree.setAnimation("pine_trees_1_copy_1");
+    playbutton.setAnimation("goldui28_result_1");
+    settings2.setAnimation("a.png_1");
+    settings.setAnimation("a.png_1_copy_1");
+  }
+  if (car.x>450) {
+    car.x = -10;
+    wheel.x = -41;
+    wheel2.x = 20;
+  }
+  if (mouseIsOver(settings)) {
+    box.setAnimation("Screenshot (836).png_2");
+    soundOn.setAnimation("sound_1");
+  }
+  if (mousePressedOver(playbutton)) {
+    playbutton.destroy();
+    secondbg.destroy();
+    settings.destroy();
+    tree.destroy();
+    settings.destroy();
+    settings2.destroy();
+    car.destroy();
+    wheel.destroy();
+    wheel2.destroy();
+    thrirdbg.setAnimation("gradient_10_1");
+    choose1.setAnimation("animation_1_copy_1");
+    choose2.setAnimation("animation_1_copy_1");
+    choose3.setAnimation("animation_1_copy_1");
+    choose4.setAnimation("animation_1_copy_1");
+    carr.setAnimation("boxcar_07_1");
+    boat.setAnimation("boat_1");
+    bicycle.setAnimation("motorcycle_1");
+    airplane.setAnimation("planefront_02_1");
+  }
+  if (mousePressedOver(carr)) {
+    carr.destroy();
+    boat.destroy();
+    airplane.destroy();
+    bicycle.destroy();
+    thrirdbg.destroy();
+    fourthbg.setAnimation("cave_1");
+    car1.setAnimation("monstertruck_01_1");
+    car2.setAnimation("monstertruck_07_1");
+    car3.setAnimation("monstertruck_06_1");
+    car4.setAnimation("monstertruck_08_1");
+    loak1.setAnimation("Screenshot (849).png_1");
+    loak2.setAnimation("Screenshot (849).png_1");
+    loak3.setAnimation("Screenshot (849).png_1");
+  }
+  if (mousePressedOver(car1)) {
+    fourthbg.destroy();
+    stage1.setAnimation("desert_2_copy_1");
+    stage2.setAnimation("background_landscape01_1_copy_1");
+    stage3.setAnimation("background_landscape02_1_copy_1");
+    stage4.setAnimation("background_landscape03_1_copy_1");
+  }
+  if (mousePressedOver(bicycle)) {
+    carr.destroy();
+    boat.destroy();
+    airplane.destroy();
+    bicycle.destroy();
+    thrirdbg.destroy();
+    fivethbg.setAnimation("gradient_34_1");
+    bicycle1.setAnimation("motoside_09_1");
+    bicycle2.setAnimation("motoside_08_1");
+    bicycle3.setAnimation("motoside_07_1");
+    loak1.setAnimation("Screenshot (849).png_1");
+    loak2.setAnimation("Screenshot (849).png_1");
+  }
+  if (mousePressedOver(bicycle1)) {
+    fivethbg.destroy();
+    stage1.setAnimation("desert_2_copy_1");
+    stage2.setAnimation("background_landscape01_1_copy_1");
+    stage3.setAnimation("background_landscape02_1_copy_1");
+    stage4.setAnimation("background_landscape03_1_copy_1");
+  }
+  if (mousePressedOver(airplane)) {
+    carr.destroy();
+    boat.destroy();
+    airplane.destroy();
+    bicycle.destroy();
+    thrirdbg.destroy();
+    sixthbg.setAnimation("abstract_26_1");
+    airplane1.setAnimation("planeGreen1_1");
+    airplane2.setAnimation("planeBlue1_1");
+    airplane3.setAnimation("planeRed1_1");
+    airplane4.setAnimation("planeYellow1_1");
+    loak1.setAnimation("Screenshot (849).png_1");
+    loak2.setAnimation("Screenshot (849).png_1");
+    loak3.setAnimation("Screenshot (849).png_1");
+  }
+  if (mousePressedOver(airplane1)) {
+    sixthbg.destroy();
+    stage1.setAnimation("desert_2_copy_1");
+    stage2.setAnimation("background_landscape01_1_copy_1");
+    stage3.setAnimation("background_landscape02_1_copy_1");
+    stage4.setAnimation("background_landscape03_1_copy_1");
+  }
+  if (mousePressedOver(boat)) {
+    carr.destroy();
+    boat.destroy();
+    airplane.destroy();
+    bicycle.destroy();
+    thrirdbg.destroy();
+    seventhbg.setAnimation("background_underwater_05_2");
+    boat1.setAnimation("boat_1");
+    boat2.setAnimation("ship_02_1");
+    boat3.setAnimation("ship_03_1");
+    loak1.setAnimation("Screenshot (849).png_1");
+    loak2.setAnimation("Screenshot (849).png_1");
+  }
+  if (mousePressedOver(boat1)) {
+    sixthbg.destroy();
+    stage1.setAnimation("desert_2_copy_1");
+    stage2.setAnimation("background_landscape01_1_copy_1");
+    stage3.setAnimation("background_landscape02_1_copy_1");
+    stage4.setAnimation("background_landscape03_1_copy_1");
+  }
+  if (mouseIsOver(firstbg)) {
+    soundOn.x = 600;
+    box.x = 600;
+  }
+  if (mousePressedOver(stage1)) {
+    stage1.x = 600;
+    stage2.x = 600;
+    stage3.x = 600;
+    stage4.x = 600;
+    choose1.x = 600;
+    choose2.x = 600;
+    choose3.x = 600;
+    choose4.x = 600;
+    bicycle2.x = 600;
+    bicycle3.x = 600;
+    loak1.x = 600;
+    loak2.x = 600;
+    bicycle1.y = 360;
+    stage1bi.setAnimation("desert_2");
+    stage1bi2.setAnimation("desert_2");
+    stage1bi.velocityX = -3;
+    stage1bi2.velocityX = -3;
+    leftarow.setAnimation("goldui17_result_1");
+    rightarow.setAnimation("goldui16_result_1");
+  }
+  if (stage1bi.x<-200 || stage1bi2.x<-200) {
+      stage1bi.x = 200;
+      stage1bi2.x = 600;
+    }
+  drawSprites();
+}
+
+https://studio.code.org/projects/gamelab/KJqgk1S9Z6I08MFpA3Ujhc17nxd_9owOfaIw2zTBfeg/edit
